@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="vi">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Chi tiết sản phẩm - QHVision
+  </title>
+  <link href="css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="css/styles.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <header>
+   <nav class="navbar navbar-expand-lg">
+    <div class="container">
+     <a class="navbar-brand" href="index.html">
+      <img alt="" src="img/qh-vision-logo.png" style="height: 30px;"/>
+     </a>
+     <button class="navbar-toggler" data-bs-target="#navbarNav" data-bs-toggle="collapse" type="button">
+      <span class="navbar-toggler-icon">
+      </span>
+     </button>
+     <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto">
+       <li class="nav-item">
+        <a class="nav-link" href="index.html">
+         Trang chủ
+        </a>
+       </li>
+       <li class="nav-item">
+        <a class="nav-link" href="cart.html">
+         Giỏ hàng
+        </a>
+       </li>
+      </ul>
+      <ul class="navbar-nav" id="nav-user">
+      </ul>
+     </div>
+    </div>
+    <section class="search-section text-light py-4">
+     <div class="container d-flex justify-content-center align-items-center">
+      <!-- Danh mục sản phẩm -->
+      <div class="dropdown filter-dropdown me-3">
+       <a class="nav-link dropdown-toggle" href="#" id="categoryToggle">
+        Danh mục sản phẩm
+       </a>
+       <ul class="dropdown-menu" id="categoryMenu">
+        <li class="dropdown-submenu">
+         <a class="dropdown-item dropdown-toggle" data-submenu="brandMenu" href="#">
+          Thương hiệu
+         </a>
+         <ul class="dropdown-menu" id="brandMenu">
+          <li>
+           <a class="dropdown-item filter-brand" data-brand="Canon" href="#">
+            Canon
+           </a>
+          </li>
+          <li>
+           <a class="dropdown-item filter-brand" data-brand="Nikon" href="#">
+            Nikon
+           </a>
+          </li>
+          <li>
+           <a class="dropdown-item filter-brand" data-brand="Sony" href="#">
+            Sony
+           </a>
+          </li>
+          <li>
+           <a class="dropdown-item filter-brand" data-brand="Fujifilm" href="#">
+            Fujifilm
+           </a>
+          </li>
+          <li>
+           <a class="dropdown-item filter-brand" data-brand="Panasonic" href="#">
+            Panasonic
+           </a>
+          </li>
+          <li>
+           <a class="dropdown-item filter-brand" data-brand="Olympus" href="#">
+            Olympus
+           </a>
+          </li>
+          <li>
+           <a class="dropdown-item filter-brand" data-brand="Leica" href="#">
+            Leica
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="dropdown-submenu">
+         <a class="dropdown-item dropdown-toggle" data-submenu="priceMenu" href="#">
+          Giá
+         </a>
+         <ul class="dropdown-menu" id="priceMenu">
+          <li>
+           <a class="dropdown-item filter-price" data-max="10000000" data-min="0" href="#">
+            Dưới 10.000.000₫
+           </a>
+          </li>
+          <li>
+           <a class="dropdown-item filter-price" data-max="15000000" data-min="10000000" href="#">
+            10–15.000.000₫
+           </a>
+          </li>
+          <li>
+           <a class="dropdown-item filter-price" data-max="20000000" data-min="15000000" href="#">
+            15–20.000.000₫
+           </a>
+          </li>
+          <li>
+           <a class="dropdown-item filter-price" data-max="999999999" data-min="20000000" href="#">
+            Trên 20.000.000₫
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="dropdown-submenu">
+         <a class="dropdown-item dropdown-toggle" data-submenu="resMenu" href="#">
+          Độ phân giải
+         </a>
+         <ul class="dropdown-menu" id="resMenu">
+          <li>
+           <a class="dropdown-item filter-res" data-max="999" data-min="20" href="#">
+            ≥ 20MP
+           </a>
+          </li>
+          <li>
+           <a class="dropdown-item filter-res" data-max="999" data-min="24" href="#">
+            ≥ 24MP
+           </a>
+          </li>
+          <li>
+           <a class="dropdown-item filter-res" data-max="999" data-min="26" href="#">
+            ≥ 26MP
+           </a>
+          </li>
+          <li>
+           <a class="dropdown-item filter-res" data-max="999" data-min="45" href="#">
+            ≥ 45MP
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li>
+         <hr class="dropdown-divider"/>
+        </li>
+        <li>
+         <a class="dropdown-item clear-filters" href="#">
+          Xóa bộ lọc
+         </a>
+        </li>
+       </ul>
+      </div>
+      <!-- Thanh tìm kiếm + nút -->
+      <div class="input-group search-input-group" style="width:500px ;">
+       <input class="form-control" id="search-input" placeholder="Tìm kiếm sản phẩm..." type="text"/>
+       <button class="btn btn-primary" id="search-btn" type="button">
+        Tìm kiếm
+       </button>
+      </div>
+     </div>
+    </section>
+   </nav>
+  </header>
+  <main>
+   <div class="container my-5">
+    <div class="row g-5">
+     <!-- Ảnh sản phẩm -->
+     <div class="col-md-6">
+      <img alt="Ảnh sản phẩm" class="img-fluid rounded" id="prod-img" src=""/>
+     </div>
+     <!-- Thông tin sản phẩm -->
+     <div class="col-md-6">
+      <h2 class="text-light" id="prod-name">
+      </h2>
+      <p class="text-secondary" id="prod-desc">
+      </p>
+      <h4 class="text-light mb-4" id="prod-price">
+      </h4>
+      <!-- Tính năng nổi bật -->
+      <h5 class="text-light">
+       Tính năng nổi bật
+      </h5>
+      <ul class="text-light mb-4" id="features-list">
+       <!-- JS sẽ chèn tính năng ở đây -->
+      </ul>
+      <!-- Thông số kỹ thuật -->
+      <h5 class="text-light">
+       Thông số kỹ thuật
+      </h5>
+      <table class="table table-sm table-dark mb-4">
+       <tbody id="specs-table">
+        <!-- JS sẽ chèn specs ở đây -->
+       </tbody>
+      </table>
+      <!-- Nút thêm giỏ hàng -->
+      <button class="btn btn-primary mb-4" id="add-cart-btn">
+       Thêm vào giỏ
+      </button>
+      <!-- Khuyến mãi từ cửa hàng -->
+      <div class="alert alert-info text-dark">
+       <h6>
+        🎁 Khuyến mãi đặc biệt từ QHVision
+       </h6>
+       <ul class="mb-0">
+        <li>
+         Miễn phí vận chuyển toàn quốc
+        </li>
+        <li>
+         Giảm thêm 5% khi mua kèm lens kit
+        </li>
+        <li>
+         Bảo hành chính hãng 2 năm
+        </li>
+       </ul>
+      </div>
+     </div>
+    </div>
+    <!-- Đánh giá khách hàng -->
+    <section class="reviews-section mt-5">
+     <h5 class="text-light mb-3">
+      Đánh giá từ khách hàng
+     </h5>
+     <div class="list-group">
+      <div class="list-group-item list-group-item-dark">
+       <div>
+        <strong>
+         Nguyễn A
+        </strong>
+        <span class="text-warning">
+         ★★★★★
+        </span>
+       </div>
+       <p>
+        Chất lượng hình ảnh tuyệt vời, chế độ lấy nét nhanh và chính xác.
+       </p>
+      </div>
+      <div class="list-group-item list-group-item-dark">
+       <div>
+        <strong>
+         Trần B
+        </strong>
+        <span class="text-warning">
+         ★★★★☆
+        </span>
+       </div>
+       <p>
+        Máy chạy mượt, video rất ổn nhưng hơi nặng khi mang theo.
+       </p>
+      </div>
+      <div class="list-group-item list-group-item-dark">
+       <div>
+        <strong>
+         Phạm C
+        </strong>
+        <span class="text-warning">
+         ★★★★★
+        </span>
+       </div>
+       <p>
+        Thiết kế đẹp, màu sắc sống động. Rất đáng giá với mức giá hiện tại!
+       </p>
+      </div>
+     </div>
+    </section>
+   </div>
+  </main>
+  <footer class="footer text-center py-3">
+   © 2025 QHVision. All rights reserved.
+  </footer>
+  <script src="js/auth.js">
+  </script>
+  <script src="js/cart.js">
+  </script>
+  <script>
+   const products = {
+  "1": {
+    "id": 1,
+    "name": "Canon EOS R5",
+    "price": 10000000,
+    "img": "img/canon-eos-r5.jpg",
+    "brand": "Canon",
+    "mp": 45,
+    "desc": "Mirrorless 45MP full-frame, IS 5 trục, video 8K30.",
+    "features": [
+      "45MP full-frame",
+      "IBIS 5 trục",
+      "Dual Pixel AF",
+      "8K/30fps video"
+    ],
+    "specs": {
+      "Cảm biến": "45MP full-frame",
+      "ISO": "100–51200",
+      "Video": "8K30 / 4K120",
+      "Màn hình": "3.2″ LCD"
+    }
+  },
+  "2": {
+    "id": 2,
+    "name": "Nikon Z6 II",
+    "price": 15000000,
+    "img": "img/nikon-z6-ii.jpg",
+    "brand": "Nikon",
+    "mp": 24.5,
+    "desc": "Mirrorless 24.5MP, dual processor, 14fps.",
+    "features": [
+      "24.5MP full-frame",
+      "Dual Expeed 6",
+      "14fps burst",
+      "4K/60fps video"
+    ],
+    "specs": {
+      "Cảm biến": "24.5MP FF",
+      "ISO": "100–51200",
+      "Video": "4K/60",
+      "Màn hình": "3.2″ tilting"
+    }
+  },
+  "3": {
+    "id": 3,
+    "name": "Sony A7 III",
+    "price": 12500000,
+    "img": "img/sony-a7-iii.jpg",
+    "brand": "Sony",
+    "mp": 24.2,
+    "desc": "24MP full-frame, AF 693 điểm, pin trâu.",
+    "features": [
+      "24.2MP full-frame",
+      "693 AF points",
+      "10fps burst",
+      "4K/30fps video"
+    ],
+    "specs": {
+      "Cảm biến": "24.2MP FF",
+      "ISO": "100–51200",
+      "Video": "4K30",
+      "Màn hình": "3″ tilting"
+    }
+  },
+  "4": {
+    "id": 4,
+    "name": "Fujifilm X‑AS",
+    "price": 20000000,
+    "img": "img/FujifilmXAS.jpg",
+    "brand": "Fujifilm",
+    "mp": 26.1,
+    "desc": "APS-C 26MP, Film Simulation, cổ điển.",
+    "features": [
+      "26MP APS-C",
+      "Film Simulation",
+      "IBIS 5 trục",
+      "Thiết kế cơ học"
+    ],
+    "specs": {
+      "Cảm biến": "26.1MP APS-C",
+      "ISO": "160–12800",
+      "Video": "4K30",
+      "Màn hình": "3″ touchscreen"
+    }
+  },
+  "5": {
+    "id": 5,
+    "name": "Panasonic Lumix S5",
+    "price": 18000000,
+    "img": "img/Panasonic-Lumix-S5.jpg",
+    "brand": "Panasonic",
+    "mp": 24.2,
+    "desc": "Full-frame 24MP, hybrid vlog.",
+    "features": [
+      "24MP full-frame",
+      "5-axis stabilization",
+      "V-LOG L",
+      "4K/60fps"
+    ],
+    "specs": {
+      "Cảm biến": "24MP FF",
+      "ISO": "100–51200",
+      "Video": "4K60",
+      "Màn hình": "3″ fully articulating"
+    }
+  },
+  "6": {
+    "id": 6,
+    "name": "Olympus OM-D E-M10",
+    "price": 8000000,
+    "img": "img/Olympus OM-D E-M10.jpg",
+    "brand": "Olympus",
+    "mp": 20.3,
+    "desc": "Micro Four Thirds 20MP, nhỏ gọn.",
+    "features": [
+      "20MP MFT",
+      "5-axis stabilization",
+      "4K video",
+      "EVF tích hợp"
+    ],
+    "specs": {
+      "Cảm biến": "20MP MFT",
+      "ISO": "200–25600",
+      "Video": "4K",
+      "Màn hình": "3″ tilting touchscreen"
+    }
+  },
+  "7": {
+    "id": 7,
+    "name": "Canon EOS M50",
+    "price": 9000000,
+    "img": "img/Canon EOS M50.jpg",
+    "brand": "Canon",
+    "mp": 24.1,
+    "desc": "Mirrorless APS-C 24MP, vlog-friendly.",
+    "features": [
+      "24MP APS-C",
+      "Dual Pixel AF",
+      "4K 24fps",
+      "EVF nhỏ gọn"
+    ],
+    "specs": {
+      "Cảm biến": "24MP APS-C",
+      "ISO": "100–25600",
+      "Video": "4K24",
+      "Màn hình": "3″ flip-up"
+    }
+  },
+  "8": {
+    "id": 8,
+    "name": "Nikon D7500",
+    "price": 14000000,
+    "img": "img/Nikon D7500.webp",
+    "brand": "Nikon",
+    "mp": 20.9,
+    "desc": "DSLR APS-C 20MP, nghiêm túc.",
+    "features": [
+      "20MP APS-C",
+      "51 AF points",
+      "8fps burst",
+      "4K video"
+    ],
+    "specs": {
+      "Cảm biến": "20MP DX",
+      "ISO": "100–51200",
+      "Video": "4K30",
+      "Màn hình": "3.2″ tilting"
+    }
+  },
+  "9": {
+    "id": 9,
+    "name": "Sony A6400",
+    "price": 11000000,
+    "img": "img/Sony A6400.webp",
+    "brand": "Sony",
+    "mp": 24.2,
+    "desc": "APS-C 24MP, AF Real-time Eye.",
+    "features": [
+      "24MP APS-C",
+      "Real-time Eye AF",
+      "11fps burst",
+      "4K video"
+    ],
+    "specs": {
+      "Cảm biến": "24.2MP APS-C",
+      "ISO": "100–32000",
+      "Video": "4K30",
+      "Màn hình": "3″ flip-up"
+    }
+  },
+  "10": {
+    "id": 10,
+    "name": "Leica Q2",
+    "price": 26000000,
+    "img": "img/Leica Q2.jpg",
+    "brand": "Leica",
+    "mp": 47.3,
+    "desc": "Full-frame 47MP, fixed lens 28mm.",
+    "features": [
+      "47MP full-frame",
+      "Fixed Summilux 28mm",
+      "5fps burst",
+      "ISO 50–50000"
+    ],
+    "specs": {
+      "Cảm biến": "47.3MP FF",
+      "ISO": "50–50000",
+      "Video": "4K30",
+      "Màn hình": "3″ touchscreen"
+    }
+  },
+  "11": {
+    "id": 11,
+    "name": "Canon EOS R6",
+    "price": 13000000,
+    "img": "img/canon-eos-r6.jpg",
+    "brand": "Canon",
+    "mp": 20.1,
+    "desc": "Mirrorless 45MP full-frame, IS 5 trục, video 8K30.",
+    "features": [
+      "45MP full-frame",
+      "IBIS 5 trục",
+      "Dual Pixel AF",
+      "8K/30fps video"
+    ],
+    "specs": {
+      "Cảm biến": "45MP full-frame",
+      "ISO": "100–51200",
+      "Video": "8K30 / 4K120",
+      "Màn hình": "3.2″ LCD"
+    }
+  },
+  "12": {
+    "id": 12,
+    "name": "Nikon Z7 II",
+    "price": 22000000,
+    "img": "img/nikon-z7-ii.jpg",
+    "brand": "Nikon",
+    "mp": 45.7,
+    "desc": "Mirrorless 24.5MP, dual processor, 14fps.",
+    "features": [
+      "24.5MP full-frame",
+      "Dual Expeed 6",
+      "14fps burst",
+      "4K/60fps video"
+    ],
+    "specs": {
+      "Cảm biến": "24.5MP FF",
+      "ISO": "100–51200",
+      "Video": "4K/60",
+      "Màn hình": "3.2″ tilting"
+    }
+  },
+  "13": {
+    "id": 13,
+    "name": "Sony A7R IV",
+    "price": 28000000,
+    "img": "img/sony-a7r-iv.jpg",
+    "brand": "Sony",
+    "mp": 61,
+    "desc": "24MP full-frame, AF 693 điểm, pin trâu.",
+    "features": [
+      "24.2MP full-frame",
+      "693 AF points",
+      "10fps burst",
+      "4K/30fps video"
+    ],
+    "specs": {
+      "Cảm biến": "24.2MP FF",
+      "ISO": "100–51200",
+      "Video": "4K30",
+      "Màn hình": "3″ tilting"
+    }
+  },
+  "14": {
+    "id": 14,
+    "name": "Fujifilm X-T4",
+    "price": 18000000,
+    "img": "img/fujifilm-x-t4.jpg",
+    "brand": "Fujifilm",
+    "mp": 26.1,
+    "desc": "APS-C 26MP, Film Simulation, cổ điển.",
+    "features": [
+      "26MP APS-C",
+      "Film Simulation",
+      "IBIS 5 trục",
+      "Thiết kế cơ học"
+    ],
+    "specs": {
+      "Cảm biến": "26.1MP APS-C",
+      "ISO": "160–12800",
+      "Video": "4K30",
+      "Màn hình": "3″ touchscreen"
+    }
+  },
+  "15": {
+    "id": 15,
+    "name": "Panasonic GH5",
+    "price": 17000000,
+    "img": "img/panasonic-gh5.jpg",
+    "brand": "Panasonic",
+    "mp": 20.3,
+    "desc": "Full-frame 24MP, hybrid vlog.",
+    "features": [
+      "24MP full-frame",
+      "5-axis stabilization",
+      "V-LOG L",
+      "4K/60fps"
+    ],
+    "specs": {
+      "Cảm biến": "24MP FF",
+      "ISO": "100–51200",
+      "Video": "4K60",
+      "Màn hình": "3″ fully articulating"
+    }
+  },
+  "16": {
+    "id": 16,
+    "name": "Olympus OM-D E-M1 II",
+    "price": 16000000,
+    "img": "img/olympus-em1-ii.jpg",
+    "brand": "Olympus",
+    "mp": 20.4,
+    "desc": "Micro Four Thirds 20MP, nhỏ gọn.",
+    "features": [
+      "20MP MFT",
+      "5-axis stabilization",
+      "4K video",
+      "EVF tích hợp"
+    ],
+    "specs": {
+      "Cảm biến": "20MP MFT",
+      "ISO": "200–25600",
+      "Video": "4K",
+      "Màn hình": "3″ tilting touchscreen"
+    }
+  },
+  "17": {
+    "id": 17,
+    "name": "Leica SL2",
+    "price": 45000000,
+    "img": "img/leica-sl2.jpg",
+    "brand": "Leica",
+    "mp": 47.3,
+    "desc": "Mirrorless APS-C 24MP, vlog-friendly.",
+    "features": [
+      "24MP APS-C",
+      "Dual Pixel AF",
+      "4K 24fps",
+      "EVF nhỏ gọn"
+    ],
+    "specs": {
+      "Cảm biến": "24MP APS-C",
+      "ISO": "100–25600",
+      "Video": "4K24",
+      "Màn hình": "3″ flip-up"
+    }
+  },
+  "18": {
+    "id": 18,
+    "name": "Ricoh GR III",
+    "price": 12000000,
+    "img": "img/ricoh-gr-iii.jpg",
+    "brand": "Ricoh",
+    "mp": 24.2,
+    "desc": "DSLR APS-C 20MP, nghiêm túc.",
+    "features": [
+      "20MP APS-C",
+      "51 AF points",
+      "8fps burst",
+      "4K video"
+    ],
+    "specs": {
+      "Cảm biến": "20MP DX",
+      "ISO": "100–51200",
+      "Video": "4K30",
+      "Màn hình": "3.2″ tilting"
+    }
+  },
+  "19": {
+    "id": 19,
+    "name": "Sony RX100 VII",
+    "price": 15000000,
+    "img": "img/sony-rx100-vii.jpg",
+    "brand": "Sony",
+    "mp": 20.1,
+    "desc": "APS-C 24MP, AF Real-time Eye.",
+    "features": [
+      "24MP APS-C",
+      "Real-time Eye AF",
+      "11fps burst",
+      "4K video"
+    ],
+    "specs": {
+      "Cảm biến": "24.2MP APS-C",
+      "ISO": "100–32000",
+      "Video": "4K30",
+      "Màn hình": "3″ flip-up"
+    }
+  },
+  "20": {
+    "id": 20,
+    "name": "Canon EOS 5D Mark IV",
+    "price": 25000000,
+    "img": "img/canon-5d-mark-iv.jpg",
+    "brand": "Canon",
+    "mp": 30.4,
+    "desc": "Full-frame 47MP, fixed lens 28mm.",
+    "features": [
+      "47MP full-frame",
+      "Fixed Summilux 28mm",
+      "5fps burst",
+      "ISO 50–50000"
+    ],
+    "specs": {
+      "Cảm biến": "47.3MP FF",
+      "ISO": "50–50000",
+      "Video": "4K30",
+      "Màn hình": "3″ touchscreen"
+    }
+  }
+};
+  // Lấy id từ URL và hiển thị
+  const params = new URLSearchParams(location.search);
+  const id = parseInt(params.get('prod')) || 1;
+  const p = products[id] || products[1];
+
+  // Hiển thị cơ bản
+  document.getElementById('prod-img').src = p.img;
+  document.getElementById('prod-img').alt = p.name;
+  document.getElementById('prod-name').textContent = p.name;
+  document.getElementById('prod-desc').textContent = p.desc;
+  document.getElementById('prod-price').textContent = p.price.toLocaleString() + '₫';
+
+  // Render features
+  const featList = document.getElementById('features-list');
+  featList.innerHTML = '';
+  p.features.forEach(f => {
+    const li = document.createElement('li');
+    li.textContent = f;
+    featList.appendChild(li);
+  });
+
+  // Render specs
+  const tbody = document.getElementById('specs-table');
+  tbody.innerHTML = '';
+  for (const [key, val] of Object.entries(p.specs)) {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `<th scope="row">${key}</th><td>${val}</td>`;
+    tbody.appendChild(tr);
+  }
+
+  // Thêm vào giỏ
+  document.getElementById('add-cart-btn').onclick = () => addToCart({
+    name: p.name,
+    price: p.price
+  });
+  </script>
+ </body>
+</html>

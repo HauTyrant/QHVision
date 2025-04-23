@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="vi">
+ <head>
+  <head>
+   <meta charset="utf-8"/>
+   <meta content="width=device-width, initial-scale=1" name="viewport"/>
+   <title>
+    QHVision
+   </title>
+   <link href="css/bootstrap.min.css" rel="stylesheet"/>
+   <link href="css/styles.css" rel="stylesheet"/>
+  </head>
+  <body>
+   <nav class="navbar navbar-expand-lg">
+    <div class="container">
+     <a class="navbar-brand" href="index.html">
+      <img alt="" src="img/qh-vision-logo.png" style="height: 30px;"/>
+     </a>
+     <button class="navbar-toggler" data-bs-target="#navbarNav" data-bs-toggle="collapse" type="button">
+      <span class="navbar-toggler-icon">
+      </span>
+     </button>
+     <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto">
+       <li class="nav-item">
+        <a class="nav-link" href="index.html">
+         Trang chủ
+        </a>
+       </li>
+       <li class="nav-item">
+        <a class="nav-link" href="cart.html">
+         Giỏ hàng
+        </a>
+       </li>
+      </ul>
+      <ul class="navbar-nav" id="nav-user">
+      </ul>
+     </div>
+    </div>
+    <section class="search-section text-light py-4">
+     <div class="container d-flex justify-content-center align-items-center">
+      <!-- Danh mục sản phẩm -->
+      <div class="dropdown filter-dropdown me-3">
+       <a class="nav-link dropdown-toggle" href="#" id="categoryToggle">
+        Danh mục sản phẩm
+       </a>
+       <ul class="dropdown-menu" id="categoryMenu">
+        <li class="dropdown-submenu">
+         <a class="dropdown-item dropdown-toggle" data-submenu="brandMenu" href="#">
+          Thương hiệu
+         </a>
+         <ul class="dropdown-menu" id="brandMenu">
+          <li>
+           <a class="dropdown-item filter-brand" data-brand="Canon" href="#">
+            Canon
+           </a>
+          </li>
+          <li>
+           <a class="dropdown-item filter-brand" data-brand="Nikon" href="#">
+            Nikon
+           </a>
+          </li>
+          <li>
+           <a class="dropdown-item filter-brand" data-brand="Sony" href="#">
+            Sony
+           </a>
+          </li>
+          <li>
+           <a class="dropdown-item filter-brand" data-brand="Fujifilm" href="#">
+            Fujifilm
+           </a>
+          </li>
+          <li>
+           <a class="dropdown-item filter-brand" data-brand="Panasonic" href="#">
+            Panasonic
+           </a>
+          </li>
+          <li>
+           <a class="dropdown-item filter-brand" data-brand="Olympus" href="#">
+            Olympus
+           </a>
+          </li>
+          <li>
+           <a class="dropdown-item filter-brand" data-brand="Leica" href="#">
+            Leica
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="dropdown-submenu">
+         <a class="dropdown-item dropdown-toggle" data-submenu="priceMenu" href="#">
+          Giá
+         </a>
+         <ul class="dropdown-menu" id="priceMenu">
+          <li>
+           <a class="dropdown-item filter-price" data-max="10000000" data-min="0" href="#">
+            Dưới 10.000.000₫
+           </a>
+          </li>
+          <li>
+           <a class="dropdown-item filter-price" data-max="15000000" data-min="10000000" href="#">
+            10–15.000.000₫
+           </a>
+          </li>
+          <li>
+           <a class="dropdown-item filter-price" data-max="20000000" data-min="15000000" href="#">
+            15–20.000.000₫
+           </a>
+          </li>
+          <li>
+           <a class="dropdown-item filter-price" data-max="999999999" data-min="20000000" href="#">
+            Trên 20.000.000₫
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li class="dropdown-submenu">
+         <a class="dropdown-item dropdown-toggle" data-submenu="resMenu" href="#">
+          Độ phân giải
+         </a>
+         <ul class="dropdown-menu" id="resMenu">
+          <li>
+           <a class="dropdown-item filter-res" data-max="999" data-min="20" href="#">
+            ≥ 20MP
+           </a>
+          </li>
+          <li>
+           <a class="dropdown-item filter-res" data-max="999" data-min="24" href="#">
+            ≥ 24MP
+           </a>
+          </li>
+          <li>
+           <a class="dropdown-item filter-res" data-max="999" data-min="26" href="#">
+            ≥ 26MP
+           </a>
+          </li>
+          <li>
+           <a class="dropdown-item filter-res" data-max="999" data-min="45" href="#">
+            ≥ 45MP
+           </a>
+          </li>
+         </ul>
+        </li>
+        <li>
+         <hr class="dropdown-divider"/>
+        </li>
+        <li>
+         <a class="dropdown-item clear-filters" href="#">
+          Xóa bộ lọc
+         </a>
+        </li>
+       </ul>
+      </div>
+      <!-- Thanh tìm kiếm + nút -->
+      <div class="input-group search-input-group" style="width:500px ;">
+       <input class="form-control" id="search-input" placeholder="Tìm kiếm sản phẩm..." type="text"/>
+       <button class="btn btn-primary" id="search-btn" type="button">
+        Tìm kiếm
+       </button>
+      </div>
+     </div>
+    </section>
+   </nav>
+  </body>
+ </head>
+ <body>
+  <div class="container my-5">
+   <h3>
+    Giỏ hàng của bạn
+   </h3>
+   <ul class="list-group mb-3" id="cart-items">
+   </ul>
+   <h4>
+    Tổng:
+    <span id="cart-total">
+     0₫
+    </span>
+   </h4>
+   <button class="btn btn-primary" id="checkout-btn">
+    Đặt Hàng
+   </button>
+  </div>
+  <footer class="footer text-center py-3 bg-dark text-secondary">
+   © 2025 QHVision. All rights reserved.
+  </footer>
+  <script src="js/auth.js">
+  </script>
+  <script src="js/cart.js">
+  </script>
+ </body>
+</html>

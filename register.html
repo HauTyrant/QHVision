@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="vi">
+ <head>
+  <head>
+   <meta charset="utf-8"/>
+   <meta content="width=device-width, initial-scale=1" name="viewport"/>
+   <title>
+    QHVision
+   </title>
+   <link href="css/bootstrap.min.css" rel="stylesheet"/>
+   <link href="css/styles.css" rel="stylesheet"/>
+  </head>
+  <body>
+   <nav class="navbar navbar-expand-lg">
+    <div class="container">
+     <a class="navbar-brand" href="index.html">
+      <img alt="" src="img/qh-vision-logo.png" style="height: 30px ;"/>
+     </a>
+     <button class="navbar-toggler" data-bs-target="#navbarNav" data-bs-toggle="collapse" type="button">
+      <span class="navbar-toggler-icon">
+      </span>
+     </button>
+     <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto">
+       <li class="nav-item">
+        <a class="nav-link" href="index.html">
+         Trang chủ
+        </a>
+       </li>
+       <li class="nav-item">
+        <a class="nav-link" href="cart.html">
+         Giỏ hàng
+        </a>
+       </li>
+      </ul>
+      <ul class="navbar-nav" id="nav-user">
+      </ul>
+     </div>
+    </div>
+   </nav>
+   <main>
+    <section class="container my-5" style="max-width:400px;">
+     <h3 class="text-light text-center mb-4">
+      Đăng ký
+     </h3>
+     <form id="register-form">
+      <div class="mb-3">
+       <input class="form-control" name="username" placeholder="Tên đăng nhập" required="" type="text"/>
+      </div>
+      <div class="mb-3">
+       <input class="form-control" name="password" placeholder="Mật khẩu" required="" type="password"/>
+      </div>
+      <div class="mb-3">
+       <input class="form-control" name="confirm" placeholder="Nhập lại mật khẩu" required="" type="password"/>
+      </div>
+      <div class="mb-3 d-flex">
+       <input class="form-control me-2" disabled="" id="otp-input" placeholder="Nhập mã OTP" type="text"/>
+       <button class="btn btn-secondary" id="send-otp-btn" type="button">
+        Gửi mã
+       </button>
+      </div>
+      <button class="btn btn-primary w-100" type="submit">
+       Đăng ký
+      </button>
+     </form>
+    </section>
+   </main>
+   <footer class="footer text-center py-3">
+    © 2025 QHVision. All rights reserved.
+   </footer>
+   <script src="js/auth.js">
+   </script>
+  </body>
+ </head>
+</html>
+<script>
+ let generatedOTP = "";
+  
+  document.getElementById("send-otp-btn").onclick = function () {
+    generatedOTP = Math.floor(1000 + Math.random() * 9000).toString(); // mã OTP 4 số
+    alert("Mã OTP của bạn là: " + generatedOTP); // demo hiển thị, thực tế nên gửi email/sms
+    document.getElementById("otp-input").disabled = false;
+  };
+  
+  // Kiểm tra OTP khi submit form
+  document.getElementById("register-form").addEventListener("submit", function (e) {
+    const otpInput = document.getElementById("otp-input").value.trim();
+  
+    // Chưa nhấn gửi mã
+    if (!generatedOTP) {
+      e.preventDefault();
+      alert("Vui lòng nhấn 'Gửi mã' để nhận OTP trước.");
+      return;
+    }
+  
+    // Nhập sai mã OTP
+    if (otpInput !== generatedOTP) {
+      e.preventDefault();
+      alert("Mã OTP không đúng. Vui lòng nhập lại.");
+      return;
+    }
+  
+    // ✅ Đúng mã OTP → cho phép đăng ký tiếp tục
+  });
+</script>

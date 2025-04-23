@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="vi">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   QHVision – Tất cả sản phẩm
+  </title>
+  <link href="css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="css/styles.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+   <div class="container">
+    <a class="navbar-brand" href="index.html">
+     <img alt="" src="img/qh-vision-logo.png" style="height: 30px;"/>
+    </a>
+    <button class="navbar-toggler" data-bs-target="#navbarNav" data-bs-toggle="collapse" type="button">
+     <span class="navbar-toggler-icon">
+     </span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+     <ul class="navbar-nav me-auto">
+      <li class="nav-item">
+       <a class="nav-link" href="index.html">
+        Trang chủ
+       </a>
+      </li>
+      <li class="nav-item">
+       <a class="nav-link" href="cart.html">
+        Giỏ hàng
+       </a>
+      </li>
+     </ul>
+     <ul class="navbar-nav" id="nav-user">
+     </ul>
+    </div>
+   </div>
+   <section class="search-section text-light py-4">
+    <div class="container d-flex justify-content-center align-items-center">
+     <!-- Danh mục sản phẩm -->
+     <div class="dropdown filter-dropdown me-3">
+      <a class="nav-link dropdown-toggle" href="#" id="categoryToggle">
+       Danh mục sản phẩm
+      </a>
+      <ul class="dropdown-menu" id="categoryMenu">
+       <li class="dropdown-submenu">
+        <a class="dropdown-item dropdown-toggle" data-submenu="brandMenu" href="#">
+         Thương hiệu
+        </a>
+        <ul class="dropdown-menu" id="brandMenu">
+         <li>
+          <a class="dropdown-item filter-brand" data-brand="Canon" href="#">
+           Canon
+          </a>
+         </li>
+         <li>
+          <a class="dropdown-item filter-brand" data-brand="Nikon" href="#">
+           Nikon
+          </a>
+         </li>
+         <li>
+          <a class="dropdown-item filter-brand" data-brand="Sony" href="#">
+           Sony
+          </a>
+         </li>
+         <li>
+          <a class="dropdown-item filter-brand" data-brand="Fujifilm" href="#">
+           Fujifilm
+          </a>
+         </li>
+         <li>
+          <a class="dropdown-item filter-brand" data-brand="Panasonic" href="#">
+           Panasonic
+          </a>
+         </li>
+         <li>
+          <a class="dropdown-item filter-brand" data-brand="Olympus" href="#">
+           Olympus
+          </a>
+         </li>
+         <li>
+          <a class="dropdown-item filter-brand" data-brand="Leica" href="#">
+           Leica
+          </a>
+         </li>
+        </ul>
+       </li>
+       <li class="dropdown-submenu">
+        <a class="dropdown-item dropdown-toggle" data-submenu="priceMenu" href="#">
+         Giá
+        </a>
+        <ul class="dropdown-menu" id="priceMenu">
+         <li>
+          <a class="dropdown-item filter-price" data-max="10000000" data-min="0" href="#">
+           Dưới 10.000.000₫
+          </a>
+         </li>
+         <li>
+          <a class="dropdown-item filter-price" data-max="15000000" data-min="10000000" href="#">
+           10–15.000.000₫
+          </a>
+         </li>
+         <li>
+          <a class="dropdown-item filter-price" data-max="20000000" data-min="15000000" href="#">
+           15–20.000.000₫
+          </a>
+         </li>
+         <li>
+          <a class="dropdown-item filter-price" data-max="999999999" data-min="20000000" href="#">
+           Trên 20.000.000₫
+          </a>
+         </li>
+        </ul>
+       </li>
+       <li class="dropdown-submenu">
+        <a class="dropdown-item dropdown-toggle" data-submenu="resMenu" href="#">
+         Độ phân giải
+        </a>
+        <ul class="dropdown-menu" id="resMenu">
+         <li>
+          <a class="dropdown-item filter-res" data-max="999" data-min="20" href="#">
+           ≥ 20MP
+          </a>
+         </li>
+         <li>
+          <a class="dropdown-item filter-res" data-max="999" data-min="24" href="#">
+           ≥ 24MP
+          </a>
+         </li>
+         <li>
+          <a class="dropdown-item filter-res" data-max="999" data-min="26" href="#">
+           ≥ 26MP
+          </a>
+         </li>
+         <li>
+          <a class="dropdown-item filter-res" data-max="999" data-min="45" href="#">
+           ≥ 45MP
+          </a>
+         </li>
+        </ul>
+       </li>
+       <li>
+        <hr class="dropdown-divider"/>
+       </li>
+       <li>
+        <a class="dropdown-item clear-filters" href="#">
+         Xóa bộ lọc
+        </a>
+       </li>
+      </ul>
+     </div>
+     <!-- Thanh tìm kiếm + nút -->
+     <div class="input-group search-input-group" style="width:500px ;">
+      <input class="form-control" id="search-input" placeholder="Tìm kiếm sản phẩm..." type="text"/>
+      <button class="btn btn-primary" id="search-btn" type="button">
+       Tìm kiếm
+      </button>
+     </div>
+    </div>
+   </section>
+  </nav>
+  <div class="container my-5">
+   <h2 class="text-center text-light mb-4">
+    Tất cả sản phẩm
+   </h2>
+   <!-- Canon -->
+   <section class="mb-5">
+    <h4 class="text-light mb-3">
+     Canon
+    </h4>
+    <div class="row g-4">
+     <!-- 1 -->
+     <div class="col-sm-6 col-md-3">
+      <div class="card product-card h-100">
+       <img alt="Canon EOS R5" class="card-img-top" src="img/canon-eos-r5.jpg"/>
+       <div class="card-body d-flex flex-column">
+        <h5 class="card-title">
+         Canon EOS R5
+        </h5>
+        <p class="card-text mb-3">
+         10.000.000₫
+        </p>
+        <div class="mt-auto">
+         <button class="btn btn-primary w-100 mb-2" onclick='addToCart({"name":"Canon EOS R5","price":10000000})'>
+          Thêm vào giỏ
+         </button>
+         <a class="btn btn-outline-light w-100" href="product-detail.html?prod=1">
+          Chi tiết
+         </a>
+        </div>
+       </div>
+      </div>
+     </div>
+     <!-- 2 -->
+     <div class="col-sm-6 col-md-3">
+      <div class="card product-card h-100">
+       <img alt="Canon EOS M50" class="card-img-top" src="img/canon-eos-m50.jpg"/>
+       <div class="card-body d-flex flex-column">
+        <h5 class="card-title">
+         Canon EOS M50
+        </h5>
+        <p class="card-text mb-3">
+         9.000.000₫
+        </p>
+        <div class="mt-auto">
+         <button class="btn btn-primary w-100 mb-2" onclick='addToCart({"name":"Canon EOS M50","price":9000000})'>
+          Thêm vào giỏ
+         </button>
+         <a class="btn btn-outline-light w-100" href="product-detail.html?prod=7">
+          Chi tiết
+         </a>
+        </div>
+       </div>
+      </div>
+     </div>
+     <!-- 3 -->
+     <div class="col-sm-6 col-md-3">
+      <div class="card product-card h-100">
+       <img alt="Canon EOS R6" class="card-img-top" src="img/canon-eos-r6.jpg"/>
+       <div class="card-body d-flex flex-column">
+        <h5 class="card-title">
+         Canon EOS R6
+        </h5>
+        <p class="card-text mb-3">
+         80.000.000₫
+        </p>
+        <div class="mt-auto">
+         <button class="btn btn-primary w-100 mb-2" onclick='addToCart({"name":"Canon EOS R6","price":80000000})'>
+          Thêm vào giỏ
+         </button>
+         <a class="btn btn-outline-light w-100" href="product-detail.html?prod=11">
+          Chi tiết
+         </a>
+        </div>
+       </div>
+      </div>
+     </div>
+     <!-- 4 -->
+     <div class="col-sm-6 col-md-3">
+      <div class="card product-card h-100">
+       <img alt="Canon 5D Mark IV" class="card-img-top" src="img/canon-5d-mark-iv.jpg"/>
+       <div class="card-body d-flex flex-column">
+        <h5 class="card-title">
+         Canon 5D Mark IV
+        </h5>
+        <p class="card-text mb-3">
+         65.000.000₫
+        </p>
+        <div class="mt-auto">
+         <button class="btn btn-primary w-100 mb-2" onclick='addToCart({"name":"Canon 5D Mark IV","price":65000000})'>
+          Thêm vào giỏ
+         </button>
+         <a class="btn btn-outline-light w-100" href="product-detail.html?prod=12">
+          Chi tiết
+         </a>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <!-- Nikon (6 sản phẩm) -->
+   <section class="mb-5">
+    <h4 class="text-light mb-3">
+     Nikon
+    </h4>
+    <div class="row g-4">
+     <!-- 7 -->
+     <div class="col-sm-6 col-md-3">
+      <div class="card product-card h-100">
+       <img alt="Nikon Z6 II" class="card-img-top" src="img/nikon-z6-ii.jpg"/>
+       <div class="card-body d-flex flex-column">
+        <h5 class="card-title">
+         Nikon Z6 II
+        </h5>
+        <p class="card-text mb-3">
+         15.000.000₫
+        </p>
+        <div class="mt-auto">
+         <button class="btn btn-primary w-100 mb-2" onclick='addToCart({"name":"Nikon Z6 II","price":15000000})'>
+          Thêm vào giỏ
+         </button>
+         <a class="btn btn-outline-light w-100" href="product-detail.html?prod=2">
+          Chi tiết
+         </a>
+        </div>
+       </div>
+      </div>
+     </div>
+     <!-- 8 -->
+     <div class="col-sm-6 col-md-3">
+      <div class="card product-card h-100">
+       <img alt="Nikon D7500" class="card-img-top" src="img/nikon-d7500.jpg"/>
+       <div class="card-body d-flex flex-column">
+        <h5 class="card-title">
+         Nikon D7500
+        </h5>
+        <p class="card-text mb-3">
+         14.000.000₫
+        </p>
+        <div class="mt-auto">
+         <button class="btn btn-primary w-100 mb-2" onclick='addToCart({"name":"Nikon D7500","price":14000000})'>
+          Thêm vào giỏ
+         </button>
+         <a class="btn btn-outline-light w-100" href="product-detail.html?prod=8">
+          Chi tiết
+         </a>
+        </div>
+       </div>
+      </div>
+     </div>
+     <!-- 9 -->
+     <div class="col-sm-6 col-md-3">
+      <div class="card product-card h-100">
+       <img alt="Nikon Z7 II" class="card-img-top" src="img/nikon-z7-ii.jpg"/>
+       <div class="card-body d-flex flex-column">
+        <h5 class="card-title">
+         Nikon Z7 II
+        </h5>
+        <p class="card-text mb-3">
+         80.000.000₫
+        </p>
+        <div class="mt-auto">
+         <button class="btn btn-primary w-100 mb-2" onclick='addToCart({"name":"Nikon Z7 II","price":80000000})'>
+          Thêm vào giỏ
+         </button>
+         <a class="btn btn-outline-light w-100" href="product-detail.html?prod=15">
+          Chi tiết
+         </a>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <!-- Sony (6 sản phẩm) -->
+   <section class="mb-5">
+    <h4 class="text-light mb-3">
+     Sony
+    </h4>
+    <div class="row g-4">
+     <!-- 13 -->
+     <div class="col-sm-6 col-md-3">
+      <div class="card product-card h-100">
+       <img alt="Sony A7 III" class="card-img-top" src="img/sony-a7-iii.jpg"/>
+       <div class="card-body d-flex flex-column">
+        <h5 class="card-title">
+         Sony A7 III
+        </h5>
+        <p class="card-text mb-3">
+         12.500.000₫
+        </p>
+        <div class="mt-auto">
+         <button class="btn btn-primary w-100 mb-2" onclick='addToCart({"name":"Sony A7 III","price":12500000})'>
+          Thêm vào giỏ
+         </button>
+         <a class="btn btn-outline-light w-100" href="product-detail.html?prod=3">
+          Chi tiết
+         </a>
+        </div>
+       </div>
+      </div>
+     </div>
+     <!-- 14 -->
+     <div class="col-sm-6 col-md-3">
+      <div class="card product-card h-100">
+       <img alt="Sony A6400" class="card-img-top" src="img/sony-6400.jpg"/>
+       <div class="card-body d-flex flex-column">
+        <h5 class="card-title">
+         Sony A6400
+        </h5>
+        <p class="card-text mb-3">
+         11.000.000₫
+        </p>
+        <div class="mt-auto">
+         <button class="btn btn-primary w-100 mb-2" onclick='addToCart({"name":"Sony A6400","price":11000000})'>
+          Thêm vào giỏ
+         </button>
+         <a class="btn btn-outline-light w-100" href="product-detail.html?prod=9">
+          Chi tiết
+         </a>
+        </div>
+       </div>
+      </div>
+     </div>
+     <!-- 15 -->
+     <div class="col-sm-6 col-md-3">
+      <div class="card product-card h-100">
+       <img alt="Sony A7R IV" class="card-img-top" src="img/sony-a7r-iv.jpg"/>
+       <div class="card-body d-flex flex-column">
+        <h5 class="card-title">
+         Sony A7R IV
+        </h5>
+        <p class="card-text mb-3">
+         80.000.000₫
+        </p>
+        <div class="mt-auto">
+         <button class="btn btn-primary w-100 mb-2" onclick='addToCart({"name":"Sony A7R IV","price":80000000})'>
+          Thêm vào giỏ
+         </button>
+         <a class="btn btn-outline-light w-100" href="product-detail.html?prod=19">
+          Chi tiết
+         </a>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <!-- Fujifilm (6 sản phẩm) -->
+   <section class="mb-5">
+    <h4 class="text-light mb-3">
+     Fujifilm
+    </h4>
+    <div class="row g-4">
+     <!-- 19 -->
+     <div class="col-sm-6 col-md-3">
+      <div class="card product-card h-100">
+       <img alt="Fujifilm X‑AS" class="card-img-top" src="img/FujifilmXAS.jpg"/>
+       <div class="card-body d-flex flex-column">
+        <h5 class="card-title">
+         Fujifilm X‑AS
+        </h5>
+        <p class="card-text mb-3">
+         20.000.000₫
+        </p>
+        <div class="mt-auto">
+         <button class="btn btn-primary w-100 mb-2" onclick='addToCart({"name":"Fujifilm X‑AS","price":20000000})'>
+          Thêm vào giỏ
+         </button>
+         <a class="btn btn-outline-light w-100" href="product-detail.html?prod=4">
+          Chi tiết
+         </a>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <!-- Panasonic (6 sản phẩm) -->
+   <section class="mb-5">
+    <h4 class="text-light mb-3">
+     Panasonic
+    </h4>
+    <div class="row g-4">
+     <!-- 25 -->
+     <div class="col-sm-6 col-md-3">
+      <div class="card product-card h-100">
+       <img alt="Panasonic Lumix S5" class="card-img-top" src="img/Panasonic-Lumix-S5.jpg"/>
+       <div class="card-body d-flex flex-column">
+        <h5 class="card-title">
+         Panasonic Lumix S5
+        </h5>
+        <p class="card-text mb-3">
+         18.000.000₫
+        </p>
+        <div class="mt-auto">
+         <button class="btn btn-primary w-100 mb-2" onclick='addToCart({"name":"Panasonic Lumix S5","price":18000000})'>
+          Thêm vào giỏ
+         </button>
+         <a class="btn btn-outline-light w-100" href="product-detail.html?prod=5">
+          Chi tiết
+         </a>
+        </div>
+       </div>
+      </div>
+     </div>
+     <!-- 26 -->
+     <div class="col-sm-6 col-md-3">
+      <div class="card product-card h-100">
+       <img alt="Panasonic GH5" class="card-img-top" src="img/panasonic-gh5.jpg"/>
+       <div class="card-body d-flex flex-column">
+        <h5 class="card-title">
+         Panasonic GH5
+        </h5>
+        <p class="card-text mb-3">
+         30.000.000₫
+        </p>
+        <div class="mt-auto">
+         <button class="btn btn-primary w-100 mb-2" onclick='addToCart({"name":"Panasonic GH5","price":30000000})'>
+          Thêm vào giỏ
+         </button>
+         <a class="btn btn-outline-light w-100" href="product-detail.html?prod=28">
+          Chi tiết
+         </a>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+  </div>
+  <footer class="footer text-center py-3">
+   © 2025 QHVision. All rights reserved.
+  </footer>
+  <script src="js/auth.js">
+  </script>
+  <script src="js/cart.js">
+  </script>
+ </body>
+</html>

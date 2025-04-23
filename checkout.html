@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="vi">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   QHVision
+  </title>
+  <link href="css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="css/styles.css" rel="stylesheet"/>
+  <style>
+   /* Arrow controls */
+      .carousel-control {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0,0,0,0.5);
+        border: none;
+        font-size: 2rem;
+        color: #fff;
+        width: 40px; height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        border-radius: 50%;
+        z-index: 10;
+      }
+      .carousel-control.prev { left: -20px; }
+      .carousel-control.next { right: -20px; }
+      /* Adjust container to make room for arrows */
+      .product-section .container { position: relative; }
+  </style>
+ </head>
+ <body>
+  <nav class="navbar navbar-expand-lg">
+   <div class="container">
+    <a class="navbar-brand" href="index.html">
+     <img alt="" src="img/qh-vision-logo.png" style="height: 30px;"/>
+    </a>
+    <button class="navbar-toggler" data-bs-target="#navbarNav" data-bs-toggle="collapse" type="button">
+     <span class="navbar-toggler-icon">
+     </span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+     <ul class="navbar-nav me-auto">
+      <li class="nav-item">
+       <a class="nav-link" href="index.html">
+        Trang chủ
+       </a>
+      </li>
+      <li class="nav-item">
+       <a class="nav-link" href="cart.html">
+        Giỏ hàng
+       </a>
+      </li>
+     </ul>
+     <ul class="navbar-nav" id="nav-user">
+     </ul>
+    </div>
+   </div>
+   <section class="search-section text-light py-4">
+    <div class="container d-flex justify-content-center align-items-center">
+     <!-- Danh mục sản phẩm -->
+     <div class="dropdown filter-dropdown me-3">
+      <a class="nav-link dropdown-toggle" href="#" id="categoryToggle">
+       Danh mục sản phẩm
+      </a>
+      <ul class="dropdown-menu" id="categoryMenu">
+       <li class="dropdown-submenu">
+        <a class="dropdown-item dropdown-toggle" data-submenu="brandMenu" href="#">
+         Thương hiệu
+        </a>
+        <ul class="dropdown-menu" id="brandMenu">
+         <li>
+          <a class="dropdown-item filter-brand" data-brand="Canon" href="#">
+           Canon
+          </a>
+         </li>
+         <li>
+          <a class="dropdown-item filter-brand" data-brand="Nikon" href="#">
+           Nikon
+          </a>
+         </li>
+         <li>
+          <a class="dropdown-item filter-brand" data-brand="Sony" href="#">
+           Sony
+          </a>
+         </li>
+         <li>
+          <a class="dropdown-item filter-brand" data-brand="Fujifilm" href="#">
+           Fujifilm
+          </a>
+         </li>
+         <li>
+          <a class="dropdown-item filter-brand" data-brand="Panasonic" href="#">
+           Panasonic
+          </a>
+         </li>
+         <li>
+          <a class="dropdown-item filter-brand" data-brand="Olympus" href="#">
+           Olympus
+          </a>
+         </li>
+         <li>
+          <a class="dropdown-item filter-brand" data-brand="Leica" href="#">
+           Leica
+          </a>
+         </li>
+        </ul>
+       </li>
+       <li class="dropdown-submenu">
+        <a class="dropdown-item dropdown-toggle" data-submenu="priceMenu" href="#">
+         Giá
+        </a>
+        <ul class="dropdown-menu" id="priceMenu">
+         <li>
+          <a class="dropdown-item filter-price" data-max="10000000" data-min="0" href="#">
+           Dưới 10.000.000₫
+          </a>
+         </li>
+         <li>
+          <a class="dropdown-item filter-price" data-max="15000000" data-min="10000000" href="#">
+           10–15.000.000₫
+          </a>
+         </li>
+         <li>
+          <a class="dropdown-item filter-price" data-max="20000000" data-min="15000000" href="#">
+           15–20.000.000₫
+          </a>
+         </li>
+         <li>
+          <a class="dropdown-item filter-price" data-max="999999999" data-min="20000000" href="#">
+           Trên 20.000.000₫
+          </a>
+         </li>
+        </ul>
+       </li>
+       <li class="dropdown-submenu">
+        <a class="dropdown-item dropdown-toggle" data-submenu="resMenu" href="#">
+         Độ phân giải
+        </a>
+        <ul class="dropdown-menu" id="resMenu">
+         <li>
+          <a class="dropdown-item filter-res" data-max="999" data-min="20" href="#">
+           ≥ 20MP
+          </a>
+         </li>
+         <li>
+          <a class="dropdown-item filter-res" data-max="999" data-min="24" href="#">
+           ≥ 24MP
+          </a>
+         </li>
+         <li>
+          <a class="dropdown-item filter-res" data-max="999" data-min="26" href="#">
+           ≥ 26MP
+          </a>
+         </li>
+         <li>
+          <a class="dropdown-item filter-res" data-max="999" data-min="45" href="#">
+           ≥ 45MP
+          </a>
+         </li>
+        </ul>
+       </li>
+       <li>
+        <hr class="dropdown-divider"/>
+       </li>
+       <li>
+        <a class="dropdown-item clear-filters" href="#">
+         Xóa bộ lọc
+        </a>
+       </li>
+      </ul>
+     </div>
+     <!-- Thanh tìm kiếm + nút -->
+     <div class="input-group search-input-group" style="width:500px ;">
+      <input class="form-control" id="search-input" placeholder="Tìm kiếm sản phẩm..." type="text"/>
+      <button class="btn btn-primary" id="search-btn" type="button">
+       Tìm kiếm
+      </button>
+     </div>
+    </div>
+   </section>
+  </nav>
+  <div class="container my-5" style="max-width:500px;">
+   <h3>
+    Thanh toán
+   </h3>
+   <form onsubmit="submitOrder(event)">
+    <div class="mb-3">
+     <input class="form-control" name="name" placeholder="Họ tên" required="" type="text"/>
+    </div>
+    <div class="mb-3">
+     <input class="form-control" name="address" placeholder="Địa chỉ" required="" type="text"/>
+    </div>
+    <div class="mb-3">
+     <input class="form-control" name="phone" placeholder="Số điện thoại" required="" type="tel"/>
+    </div>
+    <!-- Phương thức thanh toán -->
+    <div class="mb-3">
+     <label class="form-label">
+      Phương thức thanh toán
+     </label>
+     <select class="form-select" id="payment-method" onchange="toggleBankFields()">
+      <option value="cod">
+       Thanh toán khi nhận hàng
+      </option>
+      <option value="online">
+       Thanh toán online
+      </option>
+     </select>
+    </div>
+    <!-- Thông tin ngân hàng -->
+    <div class="mb-3" id="bank-fields" style="display:none;">
+     <input class="form-control mb-2" id="bank-account" placeholder="Số tài khoản" type="text"/>
+     <input class="form-control" id="bank-password" placeholder="Mật khẩu ngân hàng" type="password"/>
+    </div>
+    <!-- OTP -->
+    <div class="mb-3 d-flex">
+     <input class="form-control me-2" disabled="" id="otp-input" placeholder="Nhập mã OTP" type="text"/>
+     <button class="btn btn-secondary" onclick="sendOTP()" type="button">
+      Gửi mã
+     </button>
+    </div>
+    <button class="btn btn-primary w-100">
+     Đặt hàng
+    </button>
+   </form>
+  </div>
+  <footer class="footer text-center py-3 bg-dark text-secondary">
+   © 2025 QHVision. All rights reserved.
+  </footer>
+  <script src="js/auth.js">
+  </script>
+  <script src="js/cart.js">
+  </script>
+  <script>
+   function submitOrder(e) {
+  e.preventDefault();
+  const info = {
+    name: e.target.name.value,
+    address: e.target.address.value,
+    phone: e.target.phone.value,
+    cart: getCart()
+  };
+  localStorage.setItem('orderInfo', JSON.stringify(info));
+  // Xóa giỏ hàng sau khi đặt
+  localStorage.removeItem('cart');
+  window.location.href = 'invoice.html';
+}
+  </script>
+  <script>
+   let generatedOTP = "";
+  
+  function toggleBankFields() {
+    const method = document.getElementById('payment-method').value;
+    document.getElementById('bank-fields').style.display = method === 'online' ? 'block' : 'none';
+  }
+  
+  function sendOTP() {
+    generatedOTP = Math.floor(1000 + Math.random() * 9000).toString();
+    alert("Mã OTP của bạn là: " + generatedOTP);
+    document.getElementById("otp-input").disabled = false;
+  }
+  
+  function submitOrder(e) {
+    e.preventDefault();
+    const name = e.target.name.value.trim();
+  const address = e.target.address.value.trim();
+  const phone = e.target.phone.value.trim();
+
+  // Kiểm tra tên
+  if (name.split(" ").length < 2 || name.length < 4) {
+    alert("Vui lòng nhập họ tên đầy đủ (ít nhất 2 từ).");
+    return;
+  }
+
+  // Kiểm tra địa chỉ
+  if (address.length < 6) {
+    alert("Vui lòng nhập địa chỉ hợp lệ (ít nhất 6 ký tự).");
+    return;
+  }
+
+  // Kiểm tra số điện thoại
+  if (!/^[0-9]{10}$/.test(phone)) {
+    alert("Số điện thoại không hợp lệ. Phải đủ 10 số và không chứa ký tự.");
+    return;
+  }
+
+    const method = document.getElementById('payment-method').value;
+    const otpInput = document.getElementById('otp-input').value;
+  
+    if (!generatedOTP) {
+      alert("Vui lòng nhấn 'Gửi mã' để nhận mã OTP.");
+      return;
+    }
+  
+    if (otpInput !== generatedOTP) {
+      alert("Mã OTP không chính xác!");
+      return;
+    }
+  
+    if (method === 'online') {
+      const bankAcc = document.getElementById('bank-account').value;
+      const bankPwd = document.getElementById('bank-password').value;
+  
+      if (!bankAcc || !bankPwd) {
+        alert("Vui lòng nhập đầy đủ thông tin tài khoản ngân hàng.");
+        return;
+      }
+    }
+  
+    const orderId = Math.floor(100000 + Math.random() * 900000); // mã đơn hàng
+
+const info = {
+  id: orderId,
+  name: e.target.name.value,
+  address: e.target.address.value,
+  phone: e.target.phone.value,
+  payment: method,
+  cart: getCart()
+};
+
+
+    localStorage.setItem('orderInfo', JSON.stringify(info));
+    localStorage.removeItem('cart');
+    alert("Bạn đã đặt hàng thành công!");
+window.location.href = 'invoice.html';
+
+  }
+  </script>
+ </body>
+</html>
